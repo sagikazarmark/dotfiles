@@ -38,6 +38,9 @@ defaults write com.runningwithcrayons.Alfred-Preferences-3 syncfolder -string "~
 
 echo "Make sure to disable Spotlight hotkeys manually (for now)!"
 
+# Hide dock
+osascript -e "tell application \"System Events\" to set the autohide of the dock preferences to true"
+
 # Change shell
 if [ $SHELL != "/bin/zsh" ]; then
     chsh -s /bin/zsh
