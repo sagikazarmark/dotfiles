@@ -1,0 +1,71 @@
+# Run webplates/readthedocs container
+alias doc='docker run --rm --tty --interactive --volume $PWD:/doc --user $(id -u):$(id -g) webplates/readthedocs'
+
+# Blackfire a CLI script
+alias bf='docker run --rm -t -v $PWD:/app -e BLACKFIRE_CLIENT_ID=$BLACKFIRE_CLIENT_ID -e BLACKFIRE_CLIENT_TOKEN=$BLACKFIRE_CLIENT_TOKEN webplates/blackfire-cli blackfire run php'
+
+# PHPUnit
+alias phpunit='docker run --rm -t -v $PWD:/app -w /app php:7.1 vendor/bin/phpunit'
+
+# Composer in a container
+composer () {
+    tty=
+    tty -s && tty=--tty
+    docker run \
+        $tty \
+        --interactive \
+        --rm \
+        --user $(id -u):$(id -g) \
+        --volume /private/etc/passwd:/etc/passwd:ro \
+        --volume /private/etc/group:/etc/group:ro \
+        --volume $(pwd):/app \
+        composer "$@"
+}
+
+# SQLMap
+sqlmap() {
+    tty=
+    tty -s && tty=--tty
+    docker run \
+        $tty \
+        --interactive \
+        --rm \
+        --user $(id -u):$(id -g) \
+        --volume $HOME/.sqlmap:/var/sqlmap \
+        sagikazarmark/sqlmap "$@"
+}
+
+
+### From https://github.com/webplates/symfony-standard/wiki/Docker#shell-support
+
+alias doco="docker-compose"
+
+# Alias for running production compose setup
+docop() {
+    if [[ -f docker-compose.prod.override.yml ]]; then
+        docker-compose -f docker-compose.prod.yml -f docker-compose.prod.override.yml $@
+    else
+        docker-compose -f docker-compose.prod.yml $@
+    fi
+}
+
+# Get IP address for one or all containers in a project
+dip() {
+    CONTAINER="$1"
+    PROJECT=$(echo ${PWD##*/} | tr -dc '[:alnum:]\n\r' | tr '[:upper:]' '[:lower:]')
+
+    echo -n "$(docker inspect --format='{{range $i, $e := .NetworkSettings.Networks}}{{$e.IPAddress}} {{$.Config.Image}} (network: {{$i}})\n{{end}}' `docker ps | grep ${PROJECT}_${CONTAINER} | awk '{print $1}'`)" | grep "network: ${PROJECT}_default" | awk '{print $1 " " $2}'
+}
+
+# Run composer with unlimited memory
+# TODO: make "which composer" work
+alias docomposer="docker-compose run --rm app php -d memory_limit=-1 /usr/local/bin/composer $@"
+
+# Run Symfony console with unlimited memory
+alias doconsole="docker-compose run --rm app php -d memory_limit=-1 bin/console $@"
+
+# Connect to MySQL console
+alias dodb="docker-compose exec db mysql -u root"
+
+# Start a web server from the current directory
+alias web="docker run --rm -it --network traefik --label traefik.enable=true --label traefik.docker.network=traefik --label traefik.backend=web --label traefik.frontend.entryPoints=http --label traefik.frontend.rule=Host:www.www.local -v $(pwd)/:/usr/share/nginx/html:ro nginx:1.13"

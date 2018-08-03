@@ -1,0 +1,8 @@
+source /usr/local/share/antigen/antigen.zsh
+
+# Load common profile config
+source $HOME/.dotfiles/.zshrc
+
+export PATH="/usr/local/MacGPG2/bin:$PATH"
+
+if which itermocil > /dev/null; then compctl -g '~/.itermocil/*(:t:r)' itermocil; fi

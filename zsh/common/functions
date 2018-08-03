@@ -1,0 +1,36 @@
+# Find non ASCI characters in a file
+nonasci() {
+	grep --color='auto' -P -n '[^\x00-\x7F]' $1
+}
+
+# Remove a host from SSH
+rmhost() {
+	[ $# -eq 0 ] && { echo "Usage: rmhost HOSTNAME"; return 1; }
+
+	ips=$(host "$1" | awk -F'address' '{ print $2}' | sed -e 's/^ //g')
+	ssh-keygen -R "$1"
+
+	for ip in $ips; do
+		ssh-keygen -R "$ip"
+	done
+}
+
+# Kill all the processes matching a name
+killproc() {
+	[ $# -eq 0 ] && { echo "Usage: killproc PROCESSNAME"; return 1; }
+
+	PROCESSES=($(ps aux | grep $1 | awk '{print $2}'))
+
+	for proc in $PROCESSES; do
+		kill -9 $proc
+	done
+}
+
+# Make regular file out of a symlink
+removelink() {
+	if [ -L $1 ]; then
+		temp="$(readlink "$1")";
+		rm -rf "$1";
+		cp -rf "$temp" "$1";
+	fi
+}
