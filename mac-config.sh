@@ -17,4 +17,5 @@ defaults write com.runningwithcrayons.Alfred-Preferences-3 syncfolder -string "~
 echo "Make sure to disable Spotlight hotkeys manually (for now)!"
 
 # Hide dock
+# https://discussions.apple.com/thread/5026935#21986392022
 osascript -e "tell application \"System Events\" to set the autohide of the dock preferences to true"
