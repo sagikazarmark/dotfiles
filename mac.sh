@@ -26,5 +26,6 @@ $DIR/mac-config.sh
 # Change shell
 if [ $SHELL != "/bin/zsh" ]; then
     chsh -s /bin/zsh
-    exec /bin/zsh
+    export SHELL="/bin/zsh"
+    exec $SHELL
 fi

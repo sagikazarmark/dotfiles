@@ -34,3 +34,8 @@ removelink() {
 		cp -rf "$temp" "$1";
 	fi
 }
+
+# Check which process listens on a certain port
+wholistens() {
+	lsof -n -i4TCP:$1 | grep LISTEN
+}

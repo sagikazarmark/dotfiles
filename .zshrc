@@ -1,45 +1,7 @@
-antigen use oh-my-zsh
+# Dotfiles path
+DOTFILES=$HOME/.dotfiles
 
-antigen bundles <<EOBUNDLES
-    # Bundles from the default repo (robbyrussell's oh-my-zsh)
-    wd
-    zsh_reload
-    common-aliases
-    gpg-agent
-    urltools
-    encode64
-    httpie
-    screen
-    web-search
-    command-not-found
-    sudo
-
-    # Development
-    git
-    git-extras
-    docker
-    docker-compose
-
-    # Programming languages
-    node
-    npm
-    golang
-
-    # OSX specific
-    osx
-    iterm2
-
-    # Syntax highlighting bundle.
-    zsh-users/zsh-syntax-highlighting
-
-    # Fish-like auto suggestions
-    zsh-users/zsh-autosuggestions
-
-    # Extra zsh completions
-    zsh-users/zsh-completions
-EOBUNDLES
-
-# Load the theme.
+# Theme settings
 POWERLEVEL9K_INSTALLATION_PATH=$ANTIGEN_BUNDLES/bhilburn/powerlevel9k
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context dir rbenv)
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status vcs)
@@ -48,22 +10,24 @@ POWERLEVEL9K_TIME_FORMAT="%D{%H:%M:%S}"
 POWERLEVEL9K_MODE='nerdfont-complete'
 POWERLEVEL9K_SHORTEN_DIR_LENGTH=2
 
-antigen theme bhilburn/powerlevel9k powerlevel9k
+# Preferred editor for local and remote sessions
+if [ -n $SSH_CONNECTION ]; then
+    export EDITOR='nano'
+    export GUIEDITOR='nano'
+else
+    export EDITOR='nano'
+    export GUIEDITOR='code'
+fi
+
+antigen init $DOTFILES/.antigenrc
 
 antigen apply
 
-# Preferred editor for local and remote sessions
-if [[ -n $SSH_CONNECTION ]]; then
-    export EDITOR='nano'
-else
-    export EDITOR='nano'
-fi
-
 # Source files
-for f in $(find -L $HOME/.dotfiles/zsh/ -type f); do source $f; done
+source $DOTFILES/zsh/aliases
+source $DOTFILES/zsh/apps
+source $DOTFILES/zsh/functions
+source $DOTFILES/zsh/fzf
 
 export GOPATH="$HOME/.go:$HOME/Projects/go"
-
 export PATH="$HOME/.bin:bin:$HOME/.go/bin:$HOME/Projects/go/bin:$PATH"
-
-if which firefox > /dev/null; then export BROWSER=$(which firefox); fi
