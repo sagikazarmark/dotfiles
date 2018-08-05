@@ -1,6 +1,6 @@
 antigen use oh-my-zsh
 
-antigen bundle <<EOBUNDLES
+antigen bundles <<EOBUNDLES
     # Bundles from the default repo (robbyrussell's oh-my-zsh)
     wd
     zsh_reload
@@ -12,6 +12,7 @@ antigen bundle <<EOBUNDLES
     screen
     web-search
     command-not-found
+    sudo
 
     # Development
     git
