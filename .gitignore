@@ -1,22 +1,4 @@
-.idea/*
-.rocketeer/
-.phpspec/
-.vagrant/
-.floo
-.flooignore
-.phpbrewrc
-.DS_Store
-.jira-url
-.jira-prefix
-.vscode/*
+# This file IS NOT the global gitignore file
+# It ignores files from the dotfiles repository
 
-users.txt
-.ant_targets
-atlassian-ide-plugin.xml
-auth.json
-.node-version
-.ssh/
-.php-version
-.python-version
-
-*.nupkg
+*.zwc

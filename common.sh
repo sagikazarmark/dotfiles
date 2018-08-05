@@ -14,4 +14,4 @@ ln -sf $DIR/.warprc $HOME/.warprc
 
 # Link git configs
 ln -sf $DIR/.gitconfig $HOME/.gitconfig
-ln -sf $DIR/.gitignore $HOME/.gitignore
+ln -sf $DIR/gitignore $HOME/.gitignore
