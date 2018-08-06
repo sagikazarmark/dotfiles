@@ -1,6 +1,7 @@
 [user]
 	name = Márk Sági-Kazár
 	signingkey = B5ED1C2A
+	email = mark.sagikazar@gmail.com
 [alias]
 	ci = commit
 	st = status
