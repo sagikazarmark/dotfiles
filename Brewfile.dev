@@ -1,1 +1,12 @@
+brew 'goenv'
+brew 'gron'
+brew 'kubectl'
+brew 'kubectx'
+brew 'lnav'
+brew 'nodenv'
+brew 'rbenv'
+brew 'vault'
+
 cask 'jetbrains-toolbox'
+cask 'sequel-pro'
+cask 'google-cloud-sdk'

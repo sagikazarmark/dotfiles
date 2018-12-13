@@ -21,3 +21,7 @@ alias pu="ps aux | grep -v grep | grep"
 
 # Restart SHELL
 alias rs='exec $SHELL'
+
+# Gron aliases
+alias norg="gron --ungron"
+alias ungron="gron --ungron"

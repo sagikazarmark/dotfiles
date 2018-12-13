@@ -53,3 +53,8 @@ defaults write com.apple.ImageCapture disableHotPlug -bool true
 # Allow tap to click for Apple trackpad devices
 defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
 defaults write com.apple.AppleMultitouchTrackpad Clicking -bool true
+
+
+# Mojave font issue
+# https://github.com/Microsoft/vscode/issues/51132
+defaults write -g CGFontRenderingFontSmoothingDisabled -bool NO

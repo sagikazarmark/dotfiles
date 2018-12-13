@@ -1,17 +1,17 @@
 [user]
-	name = Márk Sági-Kazár
+	name = Mark Sagi-Kazar
 	signingkey = B5ED1C2A
 	email = mark.sagikazar@gmail.com
 [alias]
 	ci = commit
 	st = status
 	co = checkout
-	today = log --since=midnight --author='Márk Sági-Kazár' --oneline
+	today = log --since=midnight --author='Mark Sagi-Kazar' --oneline
 	grog = log --graph --abbrev-commit --decorate --all --format=format:\"%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(dim white) - %an%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n %C(white)%s%C(reset)\"
 	comend = commit --amend --no-edit
 	it = !git init && git commit -m \"Root commit\" --allow-empty
 	shorty = status --short --branch
-	oss = !git config user.name \"Márk Sági-Kazár\" && git config user.email \"mark.sagikazar@gmail.com\"
+	oss = !git config user.name \"Mark Sagi-Kazar\" && git config user.email \"mark.sagikazar@gmail.com\"
 	ossit = !git init && git oss && git commit -S -m \"Root commit\" --allow-empty
 	yolo = push --force
 
