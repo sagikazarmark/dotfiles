@@ -1,0 +1,40 @@
+plugins=(
+    wd
+    zsh_reload
+    common
+    gpg
+    #urltools
+    #encode64
+    #httpie
+    screen
+    #web
+    command-not-found
+    sudo
+
+    # Development
+    git
+    git-extras
+    docker
+    docker-composer
+    #kubectl
+    doctl
+    #rbenv
+
+    # Programming languages
+    #node
+    #npm
+    golang
+
+    # OSX specific
+    osx
+    iterm2
+
+    # Fish-like auto suggestions
+    zsh-autosuggestions
+
+    # Syntax highlighting bundle.
+    zsh-syntax-highlighting
+
+    # Extra zsh completions
+    zsh-completions
+)
