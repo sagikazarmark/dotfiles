@@ -39,3 +39,35 @@ removelink() {
 wholistens() {
 	lsof -n -i4TCP:$1 | grep LISTEN
 }
+
+# Source: https://github.com/terraform-providers/terraform-provider-google/issues/611#issuecomment-463677187
+gcloudconf() {
+    conf=$1
+    if [[ -z $conf ]]; then
+        conf=`gcloud config configurations list --format="value(name)" | fzf`
+
+        if [[ -z $conf ]]; then
+            echo "error: you did not choose any of the options"
+            return 1
+        fi
+    elif [[ $(gcloud config configurations list --format="value(name)" | grep $conf > /dev/null) -ne 0 ]]; then
+        echo "error: invalid configuration"
+        return 1
+    fi
+
+    export CLOUDSDK_ACTIVE_CONFIG_NAME=$conf
+    #gcloud config configurations activate $conf
+    mkdir -p /tmp/gcloud
+    export GOOGLE_APPLICATION_CREDENTIALS=/tmp/gcloud/$conf-key.json
+    ACTIVE_ACCOUNT=$(cat ~/.config/gcloud/configurations/config_${conf} | grep account | awk '{print $3}')
+    sqlite3 ~/.config/gcloud/credentials.db "SELECT value FROM credentials WHERE account_id = '${ACTIVE_ACCOUNT}'" > $GOOGLE_APPLICATION_CREDENTIALS
+
+    if [[ $conf == "default" ]]; then
+        unset KUBECONFIG
+    else
+        mkdir -p $HOME/.kube/configs/$conf
+        export KUBECONFIG=$HOME/.kube/configs/$conf/config
+    fi
+
+    echo "switched to configuration: $conf"
+}

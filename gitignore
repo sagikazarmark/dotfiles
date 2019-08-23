@@ -20,3 +20,5 @@ auth.json
 .python-version
 
 *.nupkg
+
+values.local.yaml

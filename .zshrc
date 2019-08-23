@@ -6,9 +6,14 @@ export HISTFILE=$HOME/.zsh_history
 
 #ENABLE_CORRECTION="true"
 
+source $DOTFILES/zsh/prompts
+POWERLEVEL9K_CUSTOM_TERRAFORM="terraform_workflow"
+POWERLEVEL9K_CUSTOM_TERRAFORM_BACKGROUND="magenta"
+POWERLEVEL9K_CUSTOM_TERRAFORM_FOREGROUND="white"
+
 # Theme settings
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir)
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status vcs)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status custom_terraform vcs)
 POWERLEVEL9K_TIME_FORMAT="%D{%H:%M:%S}"
 #POWERLEVEL9K_MODE='awesome-patched'
 POWERLEVEL9K_MODE='nerdfont-complete'
@@ -108,4 +113,4 @@ source $DOTFILES/zsh/functions
 source $DOTFILES/zsh/fzf
 
 export GOPATH="$HOME/.go:$HOME/Projects/go"
-export PATH="$HOME/.bin:bin:$HOME/.go/bin:$HOME/Projects/go/bin:$HOME/.cargo/bin:$PATH"
+export PATH="bin:$HOME/.bin:$HOME/.go/bin:$HOME/Projects/go/bin:$HOME/.cargo/bin:$PATH"

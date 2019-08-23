@@ -58,3 +58,8 @@ defaults write com.apple.AppleMultitouchTrackpad Clicking -bool true
 # Mojave font issue
 # https://github.com/Microsoft/vscode/issues/51132
 defaults write -g CGFontRenderingFontSmoothingDisabled -bool NO
+
+
+# Screenshot home directory
+mkdir ~/Documents/Screenshots
+defaults write com.apple.screencapture location ~/Documents/Screenshots

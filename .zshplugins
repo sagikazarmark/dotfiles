@@ -16,8 +16,8 @@ plugins=(
     git-extras
     docker
     docker-composer
-    #kubectl
-    doctl
+    kubectl
+    #doctl
     #rbenv
 
     # Programming languages

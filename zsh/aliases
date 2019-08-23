@@ -25,3 +25,6 @@ alias rs='exec $SHELL'
 # Gron aliases
 alias norg="gron --ungron"
 alias ungron="gron --ungron"
+
+# Kubernetes aliases
+alias kc="kubectx"
