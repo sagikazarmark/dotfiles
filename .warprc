@@ -1,3 +1,4 @@
 proj:~/Projects
 go:~/Projects/go/src
 oss:~/Projects/oss
+cp:~/.banzai/pipeline/default

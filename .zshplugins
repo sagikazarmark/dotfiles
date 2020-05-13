@@ -8,7 +8,7 @@ plugins=(
     #httpie
     screen
     #web
-    command-not-found
+    #command-not-found
     sudo
 
     # Development
@@ -17,6 +17,7 @@ plugins=(
     docker
     docker-composer
     kubectl
+    helm
     #doctl
     #rbenv
 
