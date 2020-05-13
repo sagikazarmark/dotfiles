@@ -21,6 +21,9 @@ $DIR/brew-post-hook.sh
 
 cp $DIR/.zshrc.mac $HOME/.zshrc
 
+chmod -R 755 /usr/share/local/zsh/site-functions
+chmod -R 755 /usr/share/local/zsh
+
 # Change shell
 if [ $SHELL != "/bin/zsh" ]; then
     chsh -s /bin/zsh
@@ -28,5 +31,9 @@ if [ $SHELL != "/bin/zsh" ]; then
     exec $SHELL
 fi
 
+source ~/.zshrc
+
 $DIR/common.sh
 $DIR/mac-config.sh
+
+echo "Installation was successful!"
