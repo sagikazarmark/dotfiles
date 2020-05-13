@@ -1,7 +1,7 @@
 # Taps
-tap 'caskroom/cask'
-tap 'caskroom/fonts'
-tap 'caskroom/versions'
+tap 'homebrew/cask'
+tap 'homebrew/cask-fonts'
+tap 'homebrew/cask-versions'
 tap 'homebrew/bundle'
 tap 'homebrew/cask-drivers'
 
@@ -24,6 +24,10 @@ brew 'watch'
 brew 'youtube-dl'
 brew 'zplug'
 brew 'zsh'
+
+# Required by fonts
+# https://github.com/Homebrew/homebrew-cask-fonts/issues/2000#issuecomment-613720275
+brew 'svn'
 
 # Apps
 cask '1password'
@@ -65,7 +69,35 @@ cask 'vlc'
 # Fonts
 cask 'font-iosevka-nerd-font'
 cask 'font-iosevka'
-cask 'merriweather'
-cask 'roboto'
-cask 'lato'
-cask 'montserrat'
+cask 'font-merriweather'
+cask 'font-roboto'
+cask 'font-lato'
+cask 'font-montserrat'
+
+
+#############
+# Dev stuff #
+#############
+
+# brew 'goenv'
+# brew 'nodenv'
+# brew 'rbenv'
+# brew 'tfenv'
+
+brew 'asdf'
+brew 'awscli'
+brew 'azure-cli'
+brew 'gron'
+#brew 'kail'
+brew 'kind'
+brew 'kubectl'
+brew 'kubectx'
+brew 'k9s'
+brew 'lnav'
+#brew 'stern'
+brew 'vault'
+
+cask 'jetbrains-toolbox'
+cask 'ngrok'
+cask 'sequel-pro'
+cask 'google-cloud-sdk'

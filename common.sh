@@ -1,13 +1,10 @@
 #!/bin/bash
 
+set -e
+
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null && pwd )"
 
-# Source zsh config
-if [ -f $HOME/.zshrc ]; then
-    grep -q -F 'source $HOME/.dotfiles/.zshrc.mac' $HOME/.zshrc || echo -e "source \$HOME/.dotfiles/.zshrc.mac\n$(cat $HOME/.zshrc)" > $HOME/.zshrc
-else
-    grep -q -F 'source $HOME/.dotfiles/.zshrc.mac' $HOME/.zshrc || echo 'source $HOME/.dotfiles/.zshrc.mac' > $HOME/.zshrc
-fi
+$DIR/asdf.sh
 
 # Link .warprc
 ln -sf $DIR/.warprc $HOME/.warprc
@@ -15,3 +12,10 @@ ln -sf $DIR/.warprc $HOME/.warprc
 # Link git configs
 ln -sf $DIR/.gitconfig $HOME/.gitconfig
 ln -sf $DIR/gitignore $HOME/.gitignore
+
+# Krew
+curl https://krew.sh/ | bash
+kubectl krew install ctx
+kubectl krew install konfig
+kubectl krew install ns
+kubectl krew install view-secret

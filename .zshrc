@@ -229,3 +229,5 @@ export PATH="bin:$HOME/.bin:$HOME/.go/bin:$HOME/Projects/go/bin:$HOME/.cargo/bin
 export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 
 #export GCLOUD_CONFIG=$DOTFILES/.gcloudrc
+
+if [[ -f $HOME/.zshrc.local ]]; then source $HOME/.zshrc.local; fi

@@ -13,15 +13,17 @@ fi
 # Install brew if it's not already installed
 which -s brew > /dev/null
 if [[ $? != 0 ]] ; then
-    /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 fi
 
 # Install dependencies
-brew bundle
+brew bundle -v
 $DIR/brew-post-hook.sh
 
 $DIR/common.sh
 $DIR/mac-config.sh
+
+cp $DIR/.zshrc.mac $HOME/.zshrc
 
 # Change shell
 if [ $SHELL != "/bin/zsh" ]; then

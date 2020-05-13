@@ -1,5 +1,9 @@
 #!/bin/bash
 
+
+# Source: somewhere
+# Source: https://gist.github.com/jcanfield/8966452
+
 # Iterm settings
 defaults write com.googlecode.iterm2 LoadPrefsFromCustomFolder -bool true
 defaults write com.googlecode.iterm2 PrefsCustomFolder -string "/Users/mark/Google Drive/Profile/Mac/iterm"
@@ -33,6 +37,9 @@ defaults write com.apple.systemuiserver "NSStatusItem Visible com.apple.menuextr
 # Show Bluetooth in the menu bar
 defaults write com.apple.systemuiserver "NSStatusItem Visible com.apple.menuextra.bluetooth" -int 0
 
+# Show battery life percentage
+defaults write com.apple.menuextra.battery ShowPercent -string "YES"
+
 # Setup the screen saver to require password after a few seconds
 defaults write com.apple.screensaver "askForPassword" -int 1
 defaults write com.apple.screensaver "askForPasswordDelay" -int 5
@@ -57,9 +64,19 @@ defaults write com.apple.AppleMultitouchTrackpad Clicking -bool true
 
 # Mojave font issue
 # https://github.com/Microsoft/vscode/issues/51132
-defaults write -g CGFontRenderingFontSmoothingDisabled -bool NO
+# defaults write -g CGFontRenderingFontSmoothingDisabled -bool NO
 
 
 # Screenshot home directory
 mkdir ~/Documents/Screenshots
 defaults write com.apple.screencapture location ~/Documents/Screenshots
+
+
+# Finder
+# ======
+
+# Finder: show all filename extensions
+defaults write NSGlobalDomain AppleShowAllExtensions -bool true
+
+# When performing a search, search the current folder by default
+defaults write com.apple.finder FXDefaultSearchScope -string "SCcf"
