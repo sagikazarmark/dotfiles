@@ -11,8 +11,7 @@ if [[ $OSTYPE != darwin* ]]; then
 fi
 
 # Install brew if it's not already installed
-which -s brew > /dev/null
-if [[ $? != 0 ]] ; then
+if ! which -s brew > /dev/null; then
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 fi
 
