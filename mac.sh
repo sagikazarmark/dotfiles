@@ -19,9 +19,6 @@ fi
 brew bundle -v
 $DIR/brew-post-hook.sh
 
-$DIR/common.sh
-$DIR/mac-config.sh
-
 cp $DIR/.zshrc.mac $HOME/.zshrc
 
 # Change shell
@@ -30,3 +27,6 @@ if [ $SHELL != "/bin/zsh" ]; then
     export SHELL="/bin/zsh"
     exec $SHELL
 fi
+
+$DIR/common.sh
+$DIR/mac-config.sh
