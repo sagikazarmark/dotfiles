@@ -21,8 +21,8 @@ $DIR/brew-post-hook.sh
 
 cp $DIR/.zshrc.mac $HOME/.zshrc
 
-chmod -R 755 /usr/share/local/zsh/site-functions
-chmod -R 755 /usr/share/local/zsh
+chmod -R 755 /usr/local/share/zsh/site-functions
+chmod -R 755 /usr/local/share/zsh
 
 # Change shell
 if [ $SHELL != "/bin/zsh" ]; then
