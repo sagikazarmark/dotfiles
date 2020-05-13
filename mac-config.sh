@@ -68,7 +68,7 @@ defaults write com.apple.AppleMultitouchTrackpad Clicking -bool true
 
 
 # Screenshot home directory
-mkdir ~/Documents/Screenshots
+mkdir -p ~/Documents/Screenshots
 defaults write com.apple.screencapture location ~/Documents/Screenshots
 
 
