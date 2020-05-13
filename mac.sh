@@ -31,7 +31,7 @@ if [ $SHELL != "/bin/zsh" ]; then
     exec $SHELL
 fi
 
-source ~/.zshrc
+#source ~/.zshrc
 
 $DIR/common.sh
 $DIR/mac-config.sh
