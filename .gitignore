@@ -2,3 +2,5 @@
 # It ignores files from the dotfiles repository
 
 *.zwc
+
+Brewfile.lock.json
