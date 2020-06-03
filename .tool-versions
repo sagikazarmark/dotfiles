@@ -1,3 +1,4 @@
 helm 2.16.1
-terraform 0.12.21
+#helm 3.2.1
+terraform 0.12.24
 nodejs 13.9.0
