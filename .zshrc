@@ -237,3 +237,6 @@ export AWS_SESSION_TOKEN_TTL=4h
 #export GCLOUD_CONFIG=$DOTFILES/.gcloudrc
 
 if [[ -f $HOME/.zshrc.local ]]; then source $HOME/.zshrc.local; fi
+
+# Unset 'duf' alias set by ohmyzsh in OMZ::plugins/common-aliases/common-aliases.plugin.zsh
+unalias duf
