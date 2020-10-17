@@ -3,7 +3,7 @@
 	signingkey = B5ED1C2A
 	email = mark.sagikazar@gmail.com
 [alias]
-	ci = commit
+	ci = commit -s
 	st = status
 	co = checkout
 	today = log --since=midnight --author='Mark Sagi-Kazar' --oneline
@@ -14,12 +14,14 @@
 	yolo = push --force
 
 [core]
-	excludesfile = /Users/mark/.gitignore_global
+	excludesfile = /Users/mark/.gitignore
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
+	path =
 [mergetool "sourcetree"]
 	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
 [commit]
 	gpgsign = true
+[url "git@github.com:"]
+	insteadOf = https://github.com

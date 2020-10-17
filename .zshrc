@@ -26,6 +26,10 @@ export HISTFILE=$HOME/.zsh_history
 export HISTSIZE=10000000
 export SAVEHIST=10000000
 
+HISTFILE=$HOME/.zsh_history
+HISTSIZE=10000000
+SAVEHIST=10000000
+
 export WD_CONFIG=$DOTFILES/.warprc
 export ASDF_DEFAULT_TOOL_VERSIONS_FILENAME=$DOTFILES/.tool-versions
 
@@ -227,6 +231,8 @@ source $DOTFILES/zsh/fzf
 export GOPATH="$HOME/.go:$HOME/Projects/go"
 export PATH="bin:$HOME/.bin:$HOME/.go/bin:$HOME/Projects/go/bin:$HOME/.cargo/bin:$PATH"
 export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
+
+export AWS_SESSION_TOKEN_TTL=4h
 
 #export GCLOUD_CONFIG=$DOTFILES/.gcloudrc
 

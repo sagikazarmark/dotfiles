@@ -28,3 +28,5 @@ alias ungron="gron --ungron"
 
 # Kubernetes aliases
 alias kc="kubectx"
+
+alias plzdev='/Users/mark/Projects/contrib/please/plz-out/bin/src/please'

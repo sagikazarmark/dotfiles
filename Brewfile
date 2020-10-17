@@ -5,6 +5,8 @@ tap 'homebrew/cask-versions'
 tap 'homebrew/bundle'
 tap 'homebrew/cask-drivers'
 
+tap 'muesli/tap'
+
 # Install Binaries
 brew 'asciinema'
 #brew 'antigen'
@@ -69,6 +71,7 @@ cask 'vuescan'
 cask 'visual-studio'
 cask 'visual-studio-code'
 cask 'vlc'
+cask 'whatsapp'
 
 # Fonts
 cask 'font-iosevka-nerd-font'
@@ -92,6 +95,7 @@ tap 'heroku/brew'
 
 brew 'asdf'
 brew 'awscli'
+cask 'aws-vault'
 brew 'azure-cli'
 brew 'gron'
 brew 'guumaster/tap/hostctl'
@@ -109,3 +113,7 @@ cask 'jetbrains-toolbox'
 cask 'ngrok'
 cask 'sequel-pro'
 cask 'google-cloud-sdk'
+
+
+# Some tools
+brew 'duf'
