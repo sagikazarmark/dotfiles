@@ -11,7 +11,7 @@
 	comend = commit --amend --no-edit
 	it = !git init && git config commit.gpgsign true && git commit -m \"Root commit\" --allow-empty
 	shorty = status --short --branch
-	yolo = push --force
+	yolo = push --force-with-lease
 
 [core]
 	excludesfile = /Users/mark/.gitignore
