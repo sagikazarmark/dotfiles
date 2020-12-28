@@ -31,6 +31,9 @@ if [ $SHELL != "/bin/zsh" ]; then
     exec $SHELL
 fi
 
+# Set global UNAME env var
+launchctl setenv UNAME Darwin
+
 #source ~/.zshrc
 
 $DIR/common.sh
