@@ -57,14 +57,6 @@ else
     export GUIEDITOR='code'
 fi
 
-#if which goenv > /dev/null; then eval "$(goenv init -)"; fi
-#if which goenv > /dev/null; then export GOROOT="$(goenv prefix)/"; fi
-#if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
-#if which nodenv > /dev/null; then eval "$(nodenv init -)"; fi
-#if which phpenv > /dev/null; then eval "$(phpenv init -)"; fi
-#if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
-#if which thefuck > /dev/null; then eval "$(thefuck --alias)"; fi
-
 # Workaround for kubectl plugin not working
 # https://github.com/zsh-users/antigen/issues/603
 # https://github.com/zsh-users/antigen/issues/583
