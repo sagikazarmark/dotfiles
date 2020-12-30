@@ -1,5 +1,0 @@
-# Load common profile config
-source $HOME/.dotfiles/.zshrc
-
-export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
-export PATH="${PATH}:${HOME}/.krew/bin"
