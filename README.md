@@ -25,6 +25,7 @@ Another important guideline for my dotfiles is that I try to keep my home direct
 ## Installation
 
 **⚠️ Warning ⚠️**
+
 I don't recommend using my dotfiles directly. Pick the parts you like and copy them to your dotfiles. That is the way.
 
 ### Linux
