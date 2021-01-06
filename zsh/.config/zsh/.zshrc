@@ -19,29 +19,24 @@ ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=5
 HISTSIZE=10000000
 SAVEHIST=10000000
 
-source $ZDOTDIR/directories.zsh
+source $ZDOTDIR/paths.zsh
 source $ZDOTDIR/theme.zsh
 source $ZDOTDIR/zinit.zsh
 
 
-# TODO: move these to somewhere else?
-export GOPATH="$HOME/.go:$HOME/Projects/go"
-export PATH="bin:$HOME/.local/bin:$HOME/.go/bin:$HOME/Projects/go/bin:$HOME/.cargo/bin:$PATH"
-export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
-export PATH="${PATH}:${HOME}/.krew/bin"
 
 export AWS_SESSION_TOKEN_TTL=4h
 
 #export GCLOUD_CONFIG=$DOTFILES/.gcloudrc
 
-if [[ -f $HOME/.zshrc.local ]]; then source $HOME/.zshrc.local; fi
+if [[ -f ${XDG_DATA_HOME:-$HOME/.local/share}/zsh/zshrc ]]; then source ${XDG_DATA_HOME:-$HOME/.local/share}/zsh/zshrc; fi
 
 # Preferred editor for local and remote sessions
 if [ -n $SSH_CONNECTION ]; then
-    export EDITOR='nano'
-    export GUIEDITOR='nano'
+    export EDITOR='nvim'
+    export GUIEDITOR='nvim'
 else
-    export EDITOR='nano'
+    export EDITOR='nvim'
     export GUIEDITOR='code'
 fi
 

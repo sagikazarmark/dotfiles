@@ -4,3 +4,5 @@
 *.zwc
 
 Brewfile.lock.json
+
+.DS_Store

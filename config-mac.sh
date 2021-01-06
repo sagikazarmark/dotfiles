@@ -6,7 +6,7 @@
 
 # Iterm settings
 defaults write com.googlecode.iterm2 LoadPrefsFromCustomFolder -bool true
-defaults write com.googlecode.iterm2 PrefsCustomFolder -string "/Users/mark/Google Drive/Profile/Mac/iterm"
+defaults write com.googlecode.iterm2 PrefsCustomFolder -string "$HOME/.dotfiles/etc/mac/iterm"
 defaults write com.googlecode.iterm2 NoSyncNeverRemindPrefsChangesLostForFile -bool true
 defaults write com.googlecode.iterm2 SUEnableAutomaticChecks -bool true
 
@@ -16,7 +16,7 @@ defaults write NSGlobalDomain NSAutomaticQuoteSubstitutionEnabled -bool false
 defaults write NSGlobalDomain NSAutomaticDashSubstitutionEnabled -bool false
 
 # Configure Alfred
-defaults write com.runningwithcrayons.Alfred-Preferences-3 syncfolder -string "~/Google Drive/Profile/Mac"
+defaults write com.runningwithcrayons.Alfred-Preferences syncfolder -string "~/Google Drive/Profile/Mac"
 
 echo "Make sure to disable Spotlight hotkeys manually (for now)!"
 
@@ -80,3 +80,14 @@ defaults write NSGlobalDomain AppleShowAllExtensions -bool true
 
 # When performing a search, search the current folder by default
 defaults write com.apple.finder FXDefaultSearchScope -string "SCcf"
+
+
+# Displays have separate spaces
+defaults write com.apple.spaces spans-displays -bool TRUE
+
+# Disable automatic rearrange of spaces
+defaults write com.apple.dock mru-spaces -bool FALSE
+
+# Reduce motion (faster switching between spaces)
+# Improves yabai experience when SIP is enabled
+defaults write com.apple.universalaccess reduceMotion -bool TRUE

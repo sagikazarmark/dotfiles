@@ -6,6 +6,7 @@ tap 'homebrew/bundle'
 tap 'homebrew/cask-drivers'
 
 tap 'muesli/tap'
+tap 'koekeishiya/formulae'
 
 # Install Binaries
 brew 'asciinema'
@@ -18,6 +19,7 @@ brew 'findutils'
 brew 'fzf'
 brew 'jq'
 brew 'mas'
+brew 'neofetch'
 brew 'neovim'
 brew 'stow'
 brew 'pidof'
@@ -75,6 +77,10 @@ cask 'visual-studio'
 cask 'visual-studio-code'
 cask 'vlc'
 cask 'whatsapp'
+
+# Desktop environment
+brew 'yabai'
+brew 'skhd'
 
 # Fonts
 cask 'font-iosevka-nerd-font'

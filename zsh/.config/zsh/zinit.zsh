@@ -67,6 +67,7 @@ zinit wait lucid for \
 zinit wait lucid for \
     OMZ::plugins/git/git.plugin.zsh \
     OMZ::plugins/kubectl/kubectl.plugin.zsh \
+    OMZ::plugins/gcloud/gcloud.plugin.zsh \
     light-mode @asdf-vm/asdf
 zinit cdclear -q
 

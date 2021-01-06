@@ -16,7 +16,7 @@
                 },
                 "rules": [
                     {
-                        "description": "Change caps_lock to Command if pressed with other keys, to escape if pressed alone.",
+                        "description": "Change caps_lock to fn if pressed with other keys, to escape if pressed alone.",
                         "manipulators": [
                             {
                                 "from": {
@@ -29,7 +29,7 @@
                                 },
                                 "to": [
                                     {
-                                        "key_code": "left_command"
+                                        "key_code": "fn"
                                     }
                                 ],
                                 "to_if_alone": [

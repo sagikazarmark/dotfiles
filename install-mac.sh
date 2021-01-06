@@ -19,10 +19,25 @@ fi
 brew bundle -v
 $DIR/brew-post-hook.sh
 
-cp $DIR/.zshrc.mac $HOME/.zshrc
-
 chmod -R 755 /usr/local/share/zsh/site-functions
 chmod -R 755 /usr/local/share/zsh
+
+# Set global UNAME env var
+launchctl setenv UNAME Darwin
+export UNAME=Darwin # Set for this session
+
+$DIR/config-mac.sh
+
+stow \
+    asdf \
+    git \
+    karabiner \
+    kitty \
+    nvim \
+    skhd \
+    wd \
+    yabai \
+    zsh
 
 # Change shell
 if [ $SHELL != "/bin/zsh" ]; then
@@ -30,13 +45,5 @@ if [ $SHELL != "/bin/zsh" ]; then
     export SHELL="/bin/zsh"
     exec $SHELL
 fi
-
-# Set global UNAME env var
-launchctl setenv UNAME Darwin
-
-#source ~/.zshrc
-
-$DIR/common.sh
-$DIR/mac-config.sh
 
 echo "Installation was successful!"
