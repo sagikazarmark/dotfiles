@@ -7,6 +7,7 @@ This repository contains my [dotfiles](https://wiki.archlinux.org/index.php/Dotf
 
 - [How it works](#how-it-works)
 - [Installation](#installation)
+- [Random stuff](#random-stuff)
 - [Attribution](#attribution)
 - [More reading](#more-reading)
 
@@ -62,6 +63,19 @@ Optionally, install development stuff (but probably open the installed terminal 
 ```
 
 
+## Random stuff
+
+### MacOS
+
+I use [yabai](https://github.com/koekeishiya/yabai) (with [skhd](https://github.com/koekeishiya/skhd)) as a tiling window manager. If you are lazy and prefer not to move your hands (away from the keyboard) you'll like it. [Read more](#yabai) below.
+
+[Karabiner Elements](https://karabiner-elements.pqrs.org/) is also a great tool for reducing the amount of time your hands have to spend away from the keyboard. For instance, I mapped Caps Lock to Escape/fn with other keys. Caps Lock is a useless functionality, Escape is too far away for my pinky and some keyboards doesn't have fn on the left, but all of them have Caps Lock, so my hotkeys are more portable this way.
+
+Speaking of keyboards: checkout [this keyboard layout](https://github.com/zaki/mac-hun-keyboard) if you are tired of the degenerate macOS layout. It puts back everything where it should be (Alt+V is @, Alt+Q is \, etc). Especially useful for programming. (Note: this is a Hungarian layout)
+
+I use [Kitty](https://sw.kovidgoyal.net/kitty) as a terminal emulator. I used iTerm for a long time, but Kitty is cross platform and it has a proper configuration file (compared to iTerm's Apple plist bullshit). I tried [Alacritty](https://github.com/alacritty/alacritty) (because Rust), but Kitty seems more active and more popular. (Fun fact: Kitty's author also created [Calibre](https://calibre-ebook.com/), another fine piece of software I use.)
+
+
 ## Attribution
 
 Although I've done my own research and spend time with these configurations,
@@ -73,6 +87,7 @@ I took a lot of inspiration from other people's dotfiles as well:
 - https://github.com/koekeishiya/dotfiles
 - https://gitlab.com/waterkip/dotty
 - https://github.com/xero/dotfiles
+- https://gitlab.com/dwt1/dotfiles
 
 I'm pretty sure there were others as well, so this is not an exclusive list. Many thanks to all the authors out there.
 
@@ -86,3 +101,8 @@ I'm pretty sure there were others as well, so this is not an exclusive list. Man
 - https://alexpearce.me/2016/02/managing-dotfiles-with-stow/
 - http://brandon.invergo.net/news/2012-05-26-using-gnu-stow-to-manage-your-dotfiles.html
 - http://letmegooglethat.com/?q=gnu+stow
+
+### Yabai
+
+- https://www.youtube.com/watch?v=JL1lz77YbUE
+- https://www.notion.so/Yabai-8da3b829872d432fac43181b7ff628fc
