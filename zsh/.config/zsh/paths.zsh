@@ -33,6 +33,7 @@ export WD_CONFIG="${XDG_CONFIG_HOME:-$HOME/.config}/wd/warprc"
 export ASDF_CONFIG_FILE="${XDG_CONFIG_HOME:-$HOME/.config}/asdf/asdfrc"
 export ASDF_DATA_DIR="${XDG_DATA_HOME:-$HOME/.local/share}/asdf"
 export ASDF_DEFAULT_TOOL_VERSIONS_FILENAME="${XDG_CONFIG_HOME:-$HOME/.config}/asdf/tool-versions"
+export K9SCONFIG="${XDG_CONFIG_HOME:-$HOME/.config}/k9s"
 
 export GOPATH="${XDG_DATA_HOME:-$HOME/.local/share}/go"
 
@@ -40,6 +41,8 @@ export GOPATH="${XDG_DATA_HOME:-$HOME/.local/share}/go"
 export GOPATH="$GOPATH:$HOME/Projects/go"
 
 export KREW_ROOT="${XDG_DATA_HOME:-$HOME/.local/share}/krew"
+export COMPOSER_HOME="${XDG_CONFIG_HOME:-$HOME/.config}/composer"
+export COMPOSER_CACHE_DIR="${XDG_CACHE_HOME:-$HOME/.cache}/composer"
 
 
 

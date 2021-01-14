@@ -59,7 +59,7 @@ yabai -m space 7 --label tmp1
 yabai -m space 8 --label tmp2
 
 # window rules
-yabai -m rule --add app="Firefox.*$" space=web
+# yabai -m rule --add app="Firefox.*$" space=web
 yabai -m rule --add app="^Notion$" space=notes
 yabai -m rule --add app="^Spotify$" space=media
 

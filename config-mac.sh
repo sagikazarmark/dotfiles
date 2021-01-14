@@ -31,6 +31,10 @@ osascript -e "tell application \"System Events\" to set the autohide of the dock
 # (e.g. enable Tab in modal dialogs)
 defaults write NSGlobalDomain AppleKeyboardUIMode -int 3
 
+# Set keyboard speed
+defaults write -g InitialKeyRepeat -int 15
+defaults write -g KeyRepeat -int 1
+
 # Show volume in the menu bar
 defaults write com.apple.systemuiserver "NSStatusItem Visible com.apple.menuextra.volume" -int 0
 

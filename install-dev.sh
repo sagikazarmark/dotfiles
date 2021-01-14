@@ -37,3 +37,5 @@ asdf plugin-add python
 asdf plugin-add "argo|argo-cd" https://github.com/trnubo/asdf-argo.git
 asdf plugin-add golang https://github.com/kennyp/asdf-golang.git
 asdf plugin-add packer https://github.com/gozer/asdf-packer.git
+asdf plugin-add yarn
+asdf plugin-add hugo https://github.com/beardix/asdf-hugo.git

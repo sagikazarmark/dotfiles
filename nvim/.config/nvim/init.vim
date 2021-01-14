@@ -12,8 +12,10 @@ endif
 call plug#begin($VIM_DATA_DIR."/plugged")
 " Language
 Plug 'aklt/plantuml-syntax'
-Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
+Plug 'cespare/vim-toml'
 Plug 'ekalinin/Dockerfile.vim'
+Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
+" Plug 'jparise/vim-graphql'
 Plug 'weirongxu/plantuml-previewer.vim'
 
 " Completion
@@ -35,10 +37,13 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'ryanoasis/vim-devicons'
 Plug 'vim-airline/vim-airline'
+Plug 'voldikss/vim-floaterm'
 
 " Commands
+Plug 'dhruvasagar/vim-table-mode'
 Plug 'easymotion/vim-easymotion'
 Plug 'lambdalisue/suda.vim'
+Plug 'tpope/vim-commentary'
 
 " Other
 Plug 'editorconfig/editorconfig-vim'
@@ -79,6 +84,11 @@ let g:airline_theme = "material"
 " let g:airline_left_alt_sep = "\uE0B5"
 " let g:airline_right_sep = "\uE0B6"
 " let g:airline_right_alt_sep = "\uE0B7"
+
+" let g:fzf_preview_window = 'right:50%'
+" let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.6  }  }
+let g:fzf_command_prefix = 'Fzf'
+let g:fzf_layout = { 'down': '~20%' }
 
 " Behavior
 set backspace=indent,eol,start

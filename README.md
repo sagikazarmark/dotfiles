@@ -97,6 +97,7 @@ I'm pretty sure there were others as well, so this is not an exclusive list. Man
 ### GNU Stow
 
 - Project home: https://www.gnu.org/software/stow/
+- https://bastian.rieck.me/blog/posts/2019/dotfiles_stow/
 - https://medium.com/@waterkip/managing-my-dotfiles-with-gnu-stow-262d2540a866
 - https://alexpearce.me/2016/02/managing-dotfiles-with-stow/
 - http://brandon.invergo.net/news/2012-05-26-using-gnu-stow-to-manage-your-dotfiles.html
@@ -106,3 +107,4 @@ I'm pretty sure there were others as well, so this is not an exclusive list. Man
 
 - https://www.youtube.com/watch?v=JL1lz77YbUE
 - https://www.notion.so/Yabai-8da3b829872d432fac43181b7ff628fc
+- https://stevenlee090.github.io/yabai-skhd-wm/
