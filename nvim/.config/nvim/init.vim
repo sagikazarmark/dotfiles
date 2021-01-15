@@ -1,5 +1,4 @@
-let $VIM_CONFIG_DIR=system('echo -n "${XDG_CONFIG_HOME:-$HOME/.config}/nvim"')
-let $VIM_DATA_DIR=system('echo -n "${XDG_DATA_HOME:-$HOME/.local/share}/nvim"')
+let $VIM_DATA_DIR=stdpath('data')
 
 if ! filereadable($VIM_DATA_DIR."/autoload/plug.vim")
 	echo "Downloading junegunn/vim-plug to manage plugins..."
