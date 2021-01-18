@@ -1,9 +1,9 @@
 let $VIM_DATA_DIR=stdpath('data')
 
-if ! filereadable($VIM_DATA_DIR."/autoload/plug.vim")
+if ! filereadable($VIM_DATA_DIR."/site/autoload/plug.vim")
 	echo "Downloading junegunn/vim-plug to manage plugins..."
-	silent !mkdir -p $VIM_DATA_DIR/autoload/
-	silent !curl "https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim" > $VIM_DATA_DIR/autoload/plug.vim
+	silent !mkdir -p $VIM_DATA_DIR/site/autoload/
+	silent !curl "https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim" > $VIM_DATA_DIR/site/autoload/plug.vim
 	autocmd VimEnter * PlugInstall
 endif
 
@@ -11,6 +11,7 @@ endif
 call plug#begin($VIM_DATA_DIR."/plugged")
 " Language
 Plug 'aklt/plantuml-syntax'
+Plug 'baskerville/vim-sxhkdrc'
 Plug 'cespare/vim-toml'
 Plug 'ekalinin/Dockerfile.vim'
 Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
@@ -91,6 +92,7 @@ let g:fzf_layout = { 'down': '~20%' }
 
 " Behavior
 set backspace=indent,eol,start
+let g:suda_smart_edit = 1
 
 " Mapping
 let mapleader = ","

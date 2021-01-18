@@ -1,0 +1,13 @@
+#!/bin/sh
+
+case $BROWSER in
+    firefox*)
+        $BROWSER --private-window
+        ;;
+
+    *)
+        echo "unknown browser"
+        exit 1
+        ;;
+esac
+

@@ -1,7 +1,7 @@
 #helm 2.16.1
 helm 3.5.0
 terraform 0.12.29
-nodejs 13.9.0
+nodejs 15.6.0
 python 3.8.3
 argo 2.8.1
 yarn 1.22.10

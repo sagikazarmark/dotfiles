@@ -1,0 +1,5 @@
+#!/bin/sh
+
+# Edit XDG Base Directory Specification overrides
+$EDITOR ${XDG_CONFIG_HOME:-$HOME/.config}/xdg/dirs
+

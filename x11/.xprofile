@@ -1,0 +1,12 @@
+# Profile script loaded at the beginning of the X session 
+# (before the window manager is started).
+#
+# https://wiki.archlinux.org/index.php/LightDM#X_session_wrapper
+# https://wiki.archlinux.org/index.php/Xprofile
+# https://stackoverflow.com/questions/41397361/xprofile-vs-xsession-vs-xinitrc/48375979#48375979
+
+# Load profile
+source ${XDG_CONFIG_HOME:-$HOME/.config}/profile/profile
+
+# vim:fileencoding=utf-8:ft=sh
+

@@ -1,13 +1,23 @@
+# Simple Hotkey Daemon (for macOS) configuration
+#
+# Home: https://github.com/koekeishiya/skhd
+#
 # Examples:
 # - https://github.com/koekeishiya/dotfiles/blob/master/skhd/skhdrc
 # - https://gitlab.com/TamasBarta/dotfiles/-/blob/master/yabai/.skhdrc
+#
+# Help: Press F1 to open this file in a dialog (press 'q' to close it).
+# TODO: implement help based on sxhkd.
 
-###################
-# Generic hotkeys #
-###################
+
+# Generic hotkeys
+# ---------------
+
+# open help
+# f1 :
 
 # open terminal
-cmd + alt - return : UNAME=Darwin /Applications/Kitty.app/Contents/MacOS/kitty --single-instance -d ~ &> /dev/null
+cmd - return : UNAME=Darwin /Applications/Kitty.app/Contents/MacOS/kitty --single-instance -d ~ &> /dev/null
 
 # reload shkd
 fn - escape : skhd -r

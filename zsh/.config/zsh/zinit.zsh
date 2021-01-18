@@ -5,6 +5,7 @@ PS1="READY > "
 declare -A ZINIT
 export ZINIT[HOME_DIR]="${XDG_DATA_HOME:-$HOME/.local/share}/zinit"
 export ZINIT[BIN_DIR]="$ZINIT[HOME_DIR]/bin"
+export ZINIT[ZCOMPDUMP_PATH]=${XDG_CACHE_HOME:-$HOME/.cache}/zsh/zcompdump
 
 ### Added by Zinit's installer
 if [[ ! -f $ZINIT[BIN_DIR]/zinit.zsh ]]; then
@@ -33,9 +34,6 @@ _zsh_finish_setup() {
     bindkey -M menuselect 'l' vi-forward-char
     bindkey -M menuselect 'j' vi-down-line-or-history
 }
-
-autoload -Uz compinit
-compinit -d ${XDG_CACHE_HOME:-$HOME/.cache}/zsh/.zcompdump
 
 # Load theme
 # Turbo mode is not used here (theme is fast and instant prompt is used)
@@ -86,5 +84,5 @@ zinit light zsh-users/zsh-completions
 zinit ice wait lucid atload"!_zsh_autosuggest_start"
 zinit load zsh-users/zsh-autosuggestions
 
-zinit ice wait'!' lucid atinit"ZINIT[COMPINIT_OPTS]=-C; zpcompinit; zpcdreplay; _zsh_finish_setup"
+zinit ice wait'!' lucid atinit"ZINIT[COMPINIT_OPTS]=-C; zicompinit; zicdreplay; _zsh_finish_setup"
 zinit light zdharma/fast-syntax-highlighting

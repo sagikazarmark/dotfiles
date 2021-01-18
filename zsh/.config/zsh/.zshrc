@@ -14,6 +14,9 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
+# Create XDG directories for zsh
+mkdir -p ${XDG_CONFIG_HOME:-$HOME/.config}/zsh/ ${XDG_DATA_HOME:-$HOME/.local/share}/zsh/ ${XDG_CACHE_HOME:-$HOME/.cache}/zsh/
+
 # Dotfiles path
 DOTFILES=$HOME/.dotfiles
 
@@ -21,8 +24,11 @@ DOTFILES=$HOME/.dotfiles
 ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=5
 HISTSIZE=10000000
 SAVEHIST=10000000
+HISTFILE=${XDG_DATA_HOME:-$HOME/.local/share}/zsh/history
+mkdir -p $(dirname $HISTFILE)
 
-source $ZDOTDIR/paths.zsh
+LESSHISTFILE=/dev/null
+
 source $ZDOTDIR/theme.zsh
 source $ZDOTDIR/zinit.zsh
 
@@ -33,16 +39,6 @@ export AWS_SESSION_TOKEN_TTL=4h
 #export GCLOUD_CONFIG=$DOTFILES/.gcloudrc
 
 if [[ -f ${XDG_DATA_HOME:-$HOME/.local/share}/zsh/zshrc ]]; then source ${XDG_DATA_HOME:-$HOME/.local/share}/zsh/zshrc; fi
-
-# Preferred editor for local and remote sessions
-if [ -n $SSH_CONNECTION ]; then
-    export EDITOR='nvim'
-    export GUIEDITOR='nvim'
-else
-    export EDITOR='nvim'
-    export GUIEDITOR='code'
-fi
-
 
 
 source $ZDOTDIR/aliases.zsh

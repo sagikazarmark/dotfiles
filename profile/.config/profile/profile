@@ -1,0 +1,50 @@
+# Profile script that needs to run in login shells and other login environments.
+# This file should be sourced in scripts like .xprofile (for graphical environments)
+# and .zprofile (ZSH login shell script).
+#
+# For more information about login shells and environments:
+#
+# https://wiki.archlinux.org/index.php/Zsh
+# https://unix.stackexchange.com/questions/71253/what-should-shouldnt-go-in-zshenv-zshrc-zlogin-zprofile-zlogout
+# https://wiki.archlinux.org/index.php/LightDM#X_session_wrapper
+# https://wiki.archlinux.org/index.php/Systemd/User#Environment_variables
+# https://wiki.archlinux.org/index.php/Xprofile
+# https://wiki.archlinux.org/index.php/Xinit#xinitrc
+# https://wiki.archlinux.org/index.php/environment_variables#Per_user
+# https://stackoverflow.com/questions/41397361/xprofile-vs-xsession-vs-xinitrc/48375979#48375979
+#
+# Note: this file contains a lot of PATH changing. Since this file is loaded after /etc/zsh/zprofile it should be fine.
+
+# Load XDG Base Directory Specification settings and overrides
+source ${XDG_CONFIG_HOME:-$HOME/.config}/xdg/dirs
+
+# Add `~/.local/bin` to $PATH
+export PATH="$PATH:$HOME/.local/bin"
+
+# Deprecated: project should be moved out of this gopath
+export GOPATH="$GOPATH:$HOME/Projects/go"
+
+# Go binaries
+export PATH="$(echo $GOPATH | cut -d ':' -f1)/bin:$HOME/Projects/go/bin:$PATH"
+
+# Rust binaries
+export PATH="$HOME/.cargo/bin:$PATH"
+
+# Krew binaries
+export PATH="$PATH:${KREW_ROOT:-$HOME/.krew}/bin"
+
+# Preferred editor for local and remote sessions
+# TODO: test that it works properly for SSH login shells.
+if [ -n $SSH_CONNECTION ]; then
+    export EDITOR='nvim'
+    export GUIEDITOR='nvim'
+else
+    export EDITOR='nvim'
+    export GUIEDITOR='code'
+fi
+
+# TODO: ZSH login shells probably need a different browser (qutebrowser?)
+export BROWSER=firefox-developer-edition
+
+# vim:fileencoding=utf-8:ft=sh
+

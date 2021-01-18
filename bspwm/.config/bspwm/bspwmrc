@@ -1,0 +1,14 @@
+#!/bin/sh
+
+# Start Simple X Hotkey Daemon
+sxhkd &
+
+# Change Caps Lock key to Super...
+setxkbmap -option caps:super hu
+# ... but map single press to Escape
+killall xcape; xcape -e 'Super_L=Escape' &
+
+# Configure cursor in X
+# TODO: is it needed?
+xsetroot -cursor_name left_ptr
+
