@@ -34,7 +34,8 @@ source $ZDOTDIR/zinit.zsh
 
 
 
-export AWS_SESSION_TOKEN_TTL=4h
+export AWS_SESSION_TOKEN_TTL=8h
+export AWS_MIN_TTL=8h
 
 #export GCLOUD_CONFIG=$DOTFILES/.gcloudrc
 

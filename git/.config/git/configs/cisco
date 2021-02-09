@@ -1,0 +1,8 @@
+[user]
+    email = marksk@cisco.com
+    signingkey = ""
+
+[commit]
+    gpgsign = false
+
+# vim:fileencoding=utf-8:ft=gitconfig

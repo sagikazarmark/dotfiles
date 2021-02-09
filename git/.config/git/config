@@ -9,14 +9,14 @@
 	today = log --since=midnight --author='Mark Sagi-Kazar' --oneline
 	grog = log --graph --abbrev-commit --decorate --all --format=format:\"%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(dim white) - %an%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n %C(white)%s%C(reset)\"
 	comend = commit --amend --no-edit
-	it = !git init && git config commit.gpgsign true && git commit -m \"Root commit\" --allow-empty
+	it = !git init && git commit -m \"Root commit\" --allow-empty
 	shorty = status --short --branch
 	yolo = push --force-with-lease
 
 [commit]
 	gpgsign = true
-#[url "git@github.com:"]
-#	insteadOf = https://github.com
+[url "git@github.com:"]
+	insteadOf = https://github.com
 
 [diff]
     tool = kitty
@@ -29,3 +29,5 @@
 [difftool "kitty.gui"]
     cmd = kitty kitty +kitten diff $LOCAL $REMOTE
 
+[includeIf "gitdir:~/Projects/cisco/"]
+	path = configs/cisco

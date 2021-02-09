@@ -37,3 +37,7 @@ alias vim=nvim
 
 # Unset 'duf' alias set by ohmyzsh in OMZ::plugins/common-aliases/common-aliases.plugin.zsh
 unalias duf
+
+if [[ $TERM == "xterm-kitty" ]]; then
+	alias ssh="kitty +kitten ssh"
+fi

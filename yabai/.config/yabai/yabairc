@@ -1,8 +1,8 @@
 #!/usr/bin/env sh
 
 # Examples:
-# - https://github.com/koekeishiya/dotfiles/blob/master/yabai/yabairc
-# - https://gitlab.com/TamasBarta/dotfiles/-/blob/master/yabai/.config/yabai/yabairc
+# https://github.com/koekeishiya/dotfiles/blob/master/yabai/yabairc
+# https://gitlab.com/TamasBarta/dotfiles/-/blob/master/yabai/.config/yabai/yabairc
 
 # the scripting-addition must be loaded manually if
 # you are running yabai on macOS Big Sur. Uncomment
@@ -15,8 +15,8 @@
 # see this wiki page for information:
 #  - https://github.com/koekeishiya/yabai/wiki/Installing-yabai-(latest-release)
 #
-# sudo yabai --load-sa
-# yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
+sudo yabai --load-sa
+yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
 
 # global settings
 yabai -m config mouse_follows_focus          off
@@ -65,8 +65,15 @@ yabai -m rule --add app="^Spotify$" space=media
 
 # don't manage the following applications/windows
 yabai -m rule --add app="^System Preferences$" manage=off
+yabai -m rule --add app="^Finder$" title="^.* Info$" manage=off
 yabai -m rule --add app="^Karabiner-Elements$" manage=off
 yabai -m rule --add app="^1Password.*$" manage=off
+yabai -m rule --add app="^Cisco AnyConnect Secure Mobility Client$" manage=off
+yabai -m rule --add app="^Cisco Webex Meetings$" title="^Preferences$" manage=off
+yabai -m rule --add app="^GIMP-.*$" title="^Export Image$" manage=off
+yabai -m rule --add app="^GIMP-.*$" title="^Scale Image$" manage=off
+yabai -m rule --add app="^GIMP-.*$" title="^Set Image Canvas Size$" manage=off
+yabai -m rule --add app="^Code42$" title="^Code42$" manage=off
 
 # https://github.com/koekeishiya/yabai/issues/384#issuecomment-753514066
 # https://github.com/koekeishiya/yabai/issues/350

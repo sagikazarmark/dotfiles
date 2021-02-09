@@ -84,6 +84,7 @@ cask 'whatsapp'
 # Desktop environment
 brew 'yabai'
 brew 'skhd'
+brew 'krp'
 
 # Fonts
 cask 'font-iosevka-nerd-font'

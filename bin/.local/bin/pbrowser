@@ -2,7 +2,7 @@
 
 case $BROWSER in
     firefox*)
-        $BROWSER --private-window
+        $BROWSER --private-window $@
         ;;
 
     *)

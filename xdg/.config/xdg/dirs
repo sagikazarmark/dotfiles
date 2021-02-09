@@ -40,6 +40,8 @@ export GOPATH="${XDG_DATA_HOME:-$HOME/.local/share}/go"
 # See https://wiki.archlinux.org/index.php/GnuPG#gpg-agent
 # export GNUPGHOME="${XDG_DATA_HOME:-$HOME/.local/share}/gnupg"
 
+export JFROG_CLI_HOME_DIR="${XDG_DATA_HOME:-$HOME/.local/share}/jfrog"
+
 export K9SCONFIG="${XDG_CONFIG_HOME:-$HOME/.config}/k9s"
 export KREW_ROOT="${XDG_DATA_HOME:-$HOME/.local/share}/krew"
 

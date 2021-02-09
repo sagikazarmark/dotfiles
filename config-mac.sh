@@ -14,11 +14,16 @@ defaults write com.googlecode.iterm2 SUEnableAutomaticChecks -bool true
 # https://derflounder.wordpress.com/2014/02/01/disabling-smart-quotes-in-mavericks/
 defaults write NSGlobalDomain NSAutomaticQuoteSubstitutionEnabled -bool false
 defaults write NSGlobalDomain NSAutomaticDashSubstitutionEnabled -bool false
+defautlts write -g NSAutomaticCapitalizationEnabled -bool false
+defautlts write -g NSAutomaticSpellingCorrectionEnabled -bool false
 
 # Configure Alfred
 defaults write com.runningwithcrayons.Alfred-Preferences syncfolder -string "~/Google Drive/Profile/Mac"
 
 echo "Make sure to disable Spotlight hotkeys manually (for now)!"
+
+# Enable dark mode
+defaults write -g AppleInterfaceStyle dark
 
 # Automatically hide and show the Dock
 defaults write com.apple.dock autohide -bool true
@@ -32,8 +37,14 @@ osascript -e "tell application \"System Events\" to set the autohide of the dock
 defaults write NSGlobalDomain AppleKeyboardUIMode -int 3
 
 # Set keyboard speed
-defaults write -g InitialKeyRepeat -int 15
-defaults write -g KeyRepeat -int 1
+# defaults write -g InitialKeyRepeat -int 15
+# defaults write -g KeyRepeat -int 1
+
+# set repeat rate to 15ms, fastest value in system pref = 2 (30ms)
+krp --repeat-rate 1.5
+
+# set delay until repeat to 135ms, fastest value in system pref = 15 (225ms)
+krp --delay-until-repeat 15
 
 # Show volume in the menu bar
 defaults write com.apple.systemuiserver "NSStatusItem Visible com.apple.menuextra.volume" -int 0
