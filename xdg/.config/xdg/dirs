@@ -29,6 +29,11 @@ export ASDF_CONFIG_FILE="${XDG_CONFIG_HOME:-$HOME/.config}/asdf/asdfrc"
 export ASDF_DATA_DIR="${XDG_DATA_HOME:-$HOME/.local/share}/asdf"
 export ASDF_DEFAULT_TOOL_VERSIONS_FILENAME="${XDG_CONFIG_HOME:-$HOME/.config}/asdf/tool-versions"
 
+export AWS_SHARED_CREDENTIALS_FILE="${XDG_CONFIG_HOME:-$HOME/.config}/aws/credentials"
+export AWS_CONFIG_FILE="${XDG_CONFIG_HOME:-$HOME/.config}/aws/config"
+
+export BOTO_CONFIG="${XDG_CONFIG_HOME:-$HOME/.config}/aws/boto"
+
 export CARGO_HOME="${XDG_DATA_HOME:-$HOME/.local/share}/cargo"
 
 export COMPOSER_HOME="${XDG_CONFIG_HOME:-$HOME/.config}/composer"

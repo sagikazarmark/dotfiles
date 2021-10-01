@@ -16,6 +16,7 @@ Plug 'cespare/vim-toml'
 Plug 'ekalinin/Dockerfile.vim'
 Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
 " Plug 'jparise/vim-graphql'
+Plug 'towolf/vim-helm'
 Plug 'weirongxu/plantuml-previewer.vim'
 
 " Completion

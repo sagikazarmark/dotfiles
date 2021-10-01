@@ -44,3 +44,5 @@ if [[ -f ${XDG_DATA_HOME:-$HOME/.local/share}/zsh/zshrc ]]; then source ${XDG_DA
 
 source $ZDOTDIR/aliases.zsh
 source $ZDOTDIR/func.zsh
+
+eval "$(direnv hook zsh)"

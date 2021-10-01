@@ -33,7 +33,7 @@ alias doco="docker-compose"
 # Convert an image to favicon
 alias favico="convert -resize x32 -gravity center -crop 32x32+0+0 -flatten -colors 256 -background transparent"
 
-alias vim=nvim
+alias vim=lvim
 
 # Unset 'duf' alias set by ohmyzsh in OMZ::plugins/common-aliases/common-aliases.plugin.zsh
 unalias duf
@@ -41,3 +41,5 @@ unalias duf
 if [[ $TERM == "xterm-kitty" ]]; then
 	alias ssh="kitty +kitten ssh"
 fi
+
+alias ghcurl="curl -H \"Authorization: token $GITHUB_TOKEN\""

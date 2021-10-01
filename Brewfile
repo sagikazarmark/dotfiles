@@ -121,6 +121,7 @@ brew 'k9s'
 brew 'lnav'
 brew 'norwoodj/tap/helm-docs'
 #brew 'stern'
+brew 'saml2aws'
 brew 'vault'
 
 cask 'jetbrains-toolbox'

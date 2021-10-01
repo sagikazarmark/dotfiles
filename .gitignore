@@ -6,3 +6,5 @@
 Brewfile.lock.json
 
 .DS_Store
+
+packer_compiled.lua
