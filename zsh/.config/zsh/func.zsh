@@ -1,21 +1,21 @@
 # Composer in a container
-composer () {
-    tty=
-    tty -s && tty=--tty
-    docker run \
-        $tty \
-        --interactive \
-        --rm \
-        --user $(id -u):$(id -g) \
-        --env COMPOSER_HOME \
-        --env COMPOSER_CACHE_DIR \
-        --volume ${COMPOSER_HOME:-$HOME/.config/composer}:$COMPOSER_HOME \
-        --volume ${COMPOSER_CACHE_DIR:-$HOME/.cache/composer}:$COMPOSER_CACHE_DIR \
-        --volume /private/etc/passwd:/etc/passwd:ro \
-        --volume /private/etc/group:/etc/group:ro \
-        --volume $(pwd):/app \
-        composer "$@"
-}
+# composer () {
+#     tty=
+#     tty -s && tty=--tty
+#     docker run \
+#         $tty \
+#         --interactive \
+#         --rm \
+#         --user $(id -u):$(id -g) \
+#         --env COMPOSER_HOME \
+#         --env COMPOSER_CACHE_DIR \
+#         --volume ${COMPOSER_HOME:-$HOME/.config/composer}:$COMPOSER_HOME \
+#         --volume ${COMPOSER_CACHE_DIR:-$HOME/.cache/composer}:$COMPOSER_CACHE_DIR \
+#         --volume /private/etc/passwd:/etc/passwd:ro \
+#         --volume /private/etc/group:/etc/group:ro \
+#         --volume $(pwd):/app \
+#         composer "$@"
+# }
 
 # Find non ASCI characters in a file
 nonasci() {

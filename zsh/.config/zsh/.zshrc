@@ -32,7 +32,9 @@ LESSHISTFILE=/dev/null
 source $ZDOTDIR/theme.zsh
 source $ZDOTDIR/zinit.zsh
 
-
+# https://github.com/junegunn/fzf#respecting-gitignore
+export FZF_DEFAULT_COMMAND='fd --type f'
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
 export AWS_SESSION_TOKEN_TTL=8h
 export AWS_MIN_TTL=8h
